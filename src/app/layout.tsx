@@ -6,7 +6,7 @@ import "./globals.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { theme } from "@/theme";
-import { Header } from "@/components/ClientSideComponents/Header";
+import { Header } from "@/components/Header";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",

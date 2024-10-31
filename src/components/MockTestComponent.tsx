@@ -2,9 +2,9 @@ import { ArrowForward } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
 
 export type MockTestComponentType = {
-  bgcolor: String;
-  examname: String;
-  textcolor: String;
+  bgcolor: string;
+  examname: string;
+  textcolor: string;
   onClick: () => void;
 };
 
