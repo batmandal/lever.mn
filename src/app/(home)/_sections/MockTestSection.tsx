@@ -1,4 +1,4 @@
-import { MockTestComponent } from "@/components/MockTestComponent";
+import { MockTestComponent } from "@/components/_homePageComponents";
 import { Stack } from "@mui/material";
 
 const mockTestType = [

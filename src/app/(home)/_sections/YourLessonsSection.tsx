@@ -1,14 +1,39 @@
 import { ChickenImage } from "@/assets/svg/ChickenImage";
-import { SectionHeader } from "@/components/SectionHeader";
 import { Add } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
+import { useState } from "react";
 
 const buttonNames = ["Бүгд", "Дууссан", "Сурч байгаа", "Эхлээгүй"];
 
 export const YourLessonsSection = () => {
+  const [activeTab, setActiveTab] = useState(buttonNames[0]);
   return (
     <Stack py={7} spacing={4}>
-      <SectionHeader title="Таны хичээлүүд" buttonNames={buttonNames} />
+      <Stack direction={"row"} justifyContent={"space-between"} width={"100%"}>
+        <Typography color="text.secondary" fontWeight={700} fontSize={24}>
+          Таны хичээлүүд
+        </Typography>
+        <Stack direction={"row"} spacing={2}>
+          {buttonNames.map((item, index) => {
+            return (
+              <Button
+                variant="outlined"
+                sx={{
+                  color: `${
+                    activeTab == item ? "background.paper" : "text.primary"
+                  }`,
+                  bgcolor: `${activeTab == item ? "primary.dark" : null}`,
+                  borderRadius: "8px",
+                }}
+                key={index}
+                onClick={() => setActiveTab(item)}
+              >
+                {item}
+              </Button>
+            );
+          })}
+        </Stack>
+      </Stack>
       <Stack alignItems={"center"} py={5} spacing={5}>
         <ChickenImage />
         <Stack alignItems={"center"} spacing={2}>
