@@ -1,3 +1,4 @@
+import { LessonCard } from "@/components/_homePageComponents/LessonCard";
 import { Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -9,7 +10,7 @@ export const ScheduleSection = () => {
     <Stack spacing={4} py={7}>
       <Stack direction={"row"} justifyContent={"space-between"} width={"100%"}>
         <Typography color="text.secondary" fontWeight={700} fontSize={24}>
-          Таны хичээлүүд
+          Хичээлийн хуваарь
         </Typography>
         <Stack direction={"row"} spacing={2}>
           {buttonNames.map((item, index) => {
@@ -32,6 +33,7 @@ export const ScheduleSection = () => {
           })}
         </Stack>
       </Stack>
+      <LessonCard />
     </Stack>
   );
 };

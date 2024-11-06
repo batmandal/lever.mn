@@ -3,10 +3,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, Stack, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { theme } from "@/theme";
-import { Header } from "@/components/Header";
+import { Footer, Header } from "@/components";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -36,8 +36,11 @@ export default function RootLayout({
       >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Header />
-            {children}
+            <Stack bgcolor={"background.default"}>
+              <Header />
+              {children}
+              <Footer />
+            </Stack>
           </ThemeProvider>
           <CssBaseline />
         </AppRouterCacheProvider>

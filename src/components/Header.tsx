@@ -30,6 +30,7 @@ export const Header = () => {
       justifyContent="space-between"
       height="72px"
       width={"100%"}
+      bgcolor={"#fff"}
     >
       <Stack
         direction="row"

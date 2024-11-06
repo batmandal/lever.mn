@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <Stack bgcolor={"background.default"}>
+    <Stack>
       <Container>
         <YourLessonsSection />
         <MockTestSection />
