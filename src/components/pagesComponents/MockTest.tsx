@@ -1,14 +1,14 @@
 import { ArrowForward } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
 
-export type MockTestComponentType = {
+export type MockTestType = {
   bgcolor: string;
   examname: string;
   textcolor: string;
   onClick: () => void;
 };
 
-export const MockTestComponent = (props: MockTestComponentType) => {
+export const MockTest = (props: MockTestType) => {
   const { bgcolor, examname, textcolor, onClick } = props;
   return (
     <Stack

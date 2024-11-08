@@ -13,9 +13,13 @@ export const Footer = () => {
         spacing={2}
       >
         <Logo />
-        <Stack direction={"row"} justifyContent={"space-between"}>
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          color={"text.primary"}
+        >
           <Stack direction={"row"} spacing={5}>
-            © 2022, Les.
+            <Typography> © 2022, Les.</Typography>
             <Typography>Үйлчилгээний нөхцөл</Typography>
             <Typography>Нууцлалын бодлого</Typography>
           </Stack>

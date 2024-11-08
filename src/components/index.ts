@@ -1,3 +1,4 @@
 export * from "./Header";
 export * from "./Footer";
-export * from "./_homePageComponents";
+export * from "./pagesComponents";
+export * from "./authPageComponents";

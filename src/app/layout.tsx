@@ -7,6 +7,7 @@ import { CssBaseline, Stack, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { theme } from "@/theme";
 import { Footer, Header } from "@/components";
+import { usePathname } from "next/navigation";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -29,6 +30,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const hideHeaderFooter =
+    pathname === "/auth/login" || pathname === "/auth/signup";
   return (
     <html lang="en">
       <body
@@ -37,9 +41,9 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Stack bgcolor={"background.default"}>
-              <Header />
+              {!hideHeaderFooter && <Header />}
               {children}
-              <Footer />
+              {!hideHeaderFooter && <Footer />}
             </Stack>
           </ThemeProvider>
           <CssBaseline />

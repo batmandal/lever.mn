@@ -1,4 +1,3 @@
-import { LessonCard } from "@/components/_homePageComponents/LessonCard";
 import { Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -33,7 +32,6 @@ export const ScheduleSection = () => {
           })}
         </Stack>
       </Stack>
-      <LessonCard />
     </Stack>
   );
 };

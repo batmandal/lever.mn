@@ -1,17 +1,33 @@
 import { ChickenImage } from "@/assets/svg/ChickenImage";
-import { LessonChoice } from "@/components";
+import {
+  // CourseCard,
+  CourseChoice,
+} from "@/components";
 
 import { Add, Clear } from "@mui/icons-material";
-import { Button, Modal, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  //  Grid,
+  Modal,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 
 const buttonNames = ["Бүгд", "Дууссан", "Сурч байгаа", "Эхлээгүй"];
-const lessons = [
+const aboutOfLessons = [
   { name: "Ielts-writing", price: 130000 },
   { name: "Ielts-speaking", price: 150000 },
   { name: "Ielts-listening", price: 140000 },
   { name: "Ielts-reading", price: 120000 },
 ];
+
+// const courses = [
+//   { name: "IELTS-speaking", class: "IELTS class A" },
+//   { name: "IELTS-writing", class: "IELTS class B" },
+//   { name: "IELTS-listening", class: "IELTS class C" },
+//   { name: "IELTS-reading", class: "IELTS class D" },
+// ];
 
 const style = {
   position: "absolute",
@@ -107,12 +123,12 @@ export const YourLessonsSection = () => {
               </Stack>
             </Stack>
             <Stack>
-              {lessons.map((item, index) => {
+              {aboutOfLessons.map((item, index) => {
                 return (
-                  <LessonChoice
+                  <CourseChoice
                     key={index}
-                    lessonName={item.name}
-                    lessonPrice={item.price}
+                    courseName={item.name}
+                    coursePrice={item.price}
                   />
                 );
               })}
@@ -156,6 +172,15 @@ export const YourLessonsSection = () => {
           </Stack>
         </Modal>
       </Stack>
+      {/* <Grid container spacing={2}>
+        {courses.map((item, index) => {
+          return (
+            <Grid key={index} item lg={4} md={6} sm={6} xs={12}>
+              <LessonCard lessonName={item.name} className={item.class} />
+            </Grid>
+          );
+        })}
+      </Grid> */}
     </Stack>
   );
 };

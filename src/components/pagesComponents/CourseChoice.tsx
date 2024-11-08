@@ -1,8 +1,8 @@
 import { Checkbox, Stack, Typography } from "@mui/material";
 
-type lessonType = { lessonName: string; lessonPrice: number };
-export const LessonChoice = (props: lessonType) => {
-  const { lessonName, lessonPrice } = props;
+type CourseChoiceType = { courseName: string; coursePrice: number };
+export const CourseChoice = (props: CourseChoiceType) => {
+  const { courseName, coursePrice } = props;
   return (
     <Stack
       width={"100%"}
@@ -14,11 +14,11 @@ export const LessonChoice = (props: lessonType) => {
       borderTop={"1px solid #E2E2E2"}
     >
       <Stack direction={"row"} alignItems={"center"}>
-        <Checkbox color="success" />
+        <Checkbox color="secondary" />
 
-        <Typography>{lessonName}</Typography>
+        <Typography>{courseName}</Typography>
       </Stack>
-      {lessonPrice}₮
+      {coursePrice}₮
     </Stack>
   );
 };

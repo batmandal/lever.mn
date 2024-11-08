@@ -7,7 +7,10 @@ const buttons = [
   { icon: <Help />, count: 13 },
 ];
 
-export const LessonCard = () => {
+type CourseCardType = { courseName: string; className: string };
+
+export const CourseCard = (props: CourseCardType) => {
+  const { courseName, className } = props;
   return (
     <Stack
       borderRadius={"12px"}
@@ -24,7 +27,7 @@ export const LessonCard = () => {
           marginBottom={"4px"}
           color="text.secondary"
         >
-          IELTS - Speaking
+          {courseName}
         </Typography>
         <Typography
           fontWeight={400}
@@ -32,7 +35,7 @@ export const LessonCard = () => {
           marginBottom={"12px"}
           color="text.primary"
         >
-          IELTS Speaking Class A
+          {className}
         </Typography>
       </Stack>
       <Stack spacing={1} direction={"row"}>
@@ -49,7 +52,6 @@ export const LessonCard = () => {
           );
         })}
       </Stack>
-
       <Button
         variant="contained"
         sx={{
@@ -57,7 +59,6 @@ export const LessonCard = () => {
           justifyContent: "space-between",
           borderRadius: "12px",
           py: "16px",
-          px: "24px",
           boxShadow: "none",
         }}
       >

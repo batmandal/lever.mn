@@ -1,4 +1,4 @@
-import { MockTestComponent } from "@/components/_homePageComponents";
+import { MockTest } from "@/components";
 import { Stack } from "@mui/material";
 
 const mockTestType = [
@@ -11,7 +11,7 @@ export const MockTestSection = () => {
     <Stack direction={"row"} py={7} gap={"30px"}>
       {mockTestType.map((item, index) => {
         return (
-          <MockTestComponent
+          <MockTest
             key={index}
             textcolor={item.textcolor}
             bgcolor={item.bgcolor}
