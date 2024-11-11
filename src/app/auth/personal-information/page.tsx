@@ -1,6 +1,6 @@
 "use client";
 
-import { AuthButton, AuthInput } from "@/components";
+import { AuthInput } from "@/components";
 import { Button, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 
