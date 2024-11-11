@@ -21,7 +21,7 @@ const SignUp = () => {
     initialValues: { email: "" },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values.email);
+      values.email, console.log(values.email);
     },
   });
   return (
