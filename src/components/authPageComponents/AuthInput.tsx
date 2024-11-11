@@ -14,7 +14,7 @@ type AuthInputType = {
 };
 
 export const AuthInput = (props: TextFieldProps & AuthInputType) => {
-  const { inputText, inputLabel, type = "text" } = props;
+  const { inputText, inputLabel, type = "text", ...rest } = props;
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => {
@@ -26,6 +26,7 @@ export const AuthInput = (props: TextFieldProps & AuthInputType) => {
         {inputText}
       </Typography>
       <TextField
+        {...rest}
         inputProps={{ style: { borderRadius: "18px", border: "none" } }}
         variant="outlined"
         placeholder={inputLabel}

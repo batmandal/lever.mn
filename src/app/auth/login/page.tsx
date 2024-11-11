@@ -12,12 +12,13 @@ const authButtons = [
 const LogIn = () => {
   const router = useRouter();
   return (
-    <Stack direction={"row"}>
+    <Stack direction={"row"} bgcolor={"#EFF3FE"} height={"100vh"}>
       <Stack
         width={"50%"}
         justifyContent={"center"}
         alignItems={"center"}
         spacing={7}
+        bgcolor={"background.default"}
       >
         <Typography fontWeight={700} fontSize={28} color="text.secondary">
           “Lever.mn”-д нэвтрэх
@@ -78,7 +79,6 @@ const LogIn = () => {
           </Stack>
         </Stack>
       </Stack>
-      <Stack bgcolor={"#EFF3FE"} width={"50%"} height={"100vh"}></Stack>
     </Stack>
   );
 };

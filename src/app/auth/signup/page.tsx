@@ -2,22 +2,36 @@
 import { AuthButton, AuthInput } from "@/components";
 import { FacebookOutlined, Google } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
+import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
+import * as yup from "yup";
 
 const authButtons = [
   { name: "“Google” ашиглан нэвтрэх", icon: Google },
   { name: "“Facebook” ашиглан нэвтрэх", icon: FacebookOutlined },
 ];
 
+const validationSchema = yup.object({
+  email: yup.string().email("Invalid email").required(),
+});
+
 const SignUp = () => {
   const router = useRouter();
+  const formik = useFormik({
+    initialValues: { email: "" },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      values.email;
+    },
+  });
   return (
-    <Stack direction={"row"}>
+    <Stack direction={"row"} height={"100vh"} bgcolor={"#EFF3FE"}>
       <Stack
         width={"50%"}
         justifyContent={"center"}
         alignItems={"center"}
         spacing={7}
+        bgcolor={"background.default"}
       >
         <Stack width={400}>
           <Typography
@@ -63,12 +77,24 @@ const SignUp = () => {
             <AuthInput
               inputText="Мэйл хаяг"
               inputLabel="Мэйл хаягаа оруулна уу..."
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
 
             <Button
               variant="contained"
-              sx={{ boxShadow: "none", borderRadius: "16px", height: "56px" }}
-              disabled
+              sx={{
+                boxShadow: "none",
+                borderRadius: "16px",
+                height: "56px",
+                backgroundColor: "primary.dark",
+              }}
+              disabled={!formik.values.email}
+              onClick={() => formik.handleSubmit()}
             >
               Үргэлжлүүлэх
             </Button>
@@ -87,7 +113,6 @@ const SignUp = () => {
           </Stack>
         </Stack>
       </Stack>
-      <Stack bgcolor={"#EFF3FE"} width={"50%"} height={"100vh"}></Stack>
     </Stack>
   );
 };

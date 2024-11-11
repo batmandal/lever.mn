@@ -32,7 +32,9 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const hideHeaderFooter =
-    pathname === "/auth/login" || pathname === "/auth/signup";
+    pathname === "/auth/login" ||
+    pathname === "/auth/signup" ||
+    pathname === "/auth/personal-information";
   return (
     <html lang="en">
       <body
