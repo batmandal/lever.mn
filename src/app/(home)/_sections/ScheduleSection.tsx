@@ -1,3 +1,4 @@
+import { Scheduler } from "@/components";
 import { Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -32,6 +33,7 @@ export const ScheduleSection = () => {
           })}
         </Stack>
       </Stack>
+      {/* <Scheduler /> */}
     </Stack>
   );
 };
