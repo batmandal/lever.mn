@@ -8,6 +8,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { theme } from "@/theme";
 import { Footer, Header } from "@/components";
 import { usePathname } from "next/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -49,6 +51,7 @@ export default function RootLayout({
             </Stack>
           </ThemeProvider>
           <CssBaseline />
+          <ToastContainer />
         </AppRouterCacheProvider>
       </body>
     </html>

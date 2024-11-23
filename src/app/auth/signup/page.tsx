@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import * as yup from "yup";
 
 const authButtons = [
-  { name: "“Google” ашиглан нэвтрэх", icon: Google },
-  { name: "“Facebook” ашиглан нэвтрэх", icon: FacebookOutlined },
+  { name: "“Google” ашиглан бүртгүүлэх", icon: Google },
+  { name: "“Facebook” ашиглан бүртгүүлэх", icon: FacebookOutlined },
 ];
 
 const validationSchema = yup.object({
@@ -33,7 +33,13 @@ const SignUp = () => {
         spacing={7}
         bgcolor={"background.default"}
       >
-        <Stack width={400}>
+        <Stack
+          width={400}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          spacing={5}
+        >
           <Typography
             fontWeight={700}
             fontSize={28}
@@ -42,6 +48,14 @@ const SignUp = () => {
           >
             Эхний хичээлээ “Lever”-д нэгдээд үзээрэй
           </Typography>
+          <Stack>
+            <Typography textAlign={"center"} fontSize={14} fontWeight={400}>
+              Та бүртгүүлсэнээр бидний Үйлчилгээний нөхцөл
+            </Typography>
+            <Typography fontWeight={400} fontSize={14}>
+              болон Нууцлалын бодлогыг зөвшөөрч байна гэж үзнэ.
+            </Typography>
+          </Stack>
         </Stack>
 
         <Stack spacing={5}>
@@ -94,7 +108,7 @@ const SignUp = () => {
                 backgroundColor: "primary.dark",
               }}
               disabled={!formik.values.email}
-              onClick={() => formik.handleSubmit()}
+              onClick={() => router.push("./personal-information")}
             >
               Үргэлжлүүлэх
             </Button>

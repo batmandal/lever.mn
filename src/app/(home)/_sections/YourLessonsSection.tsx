@@ -16,10 +16,21 @@ import { useState } from "react";
 
 const buttonNames = ["Бүгд", "Дууссан", "Сурч байгаа", "Эхлээгүй"];
 const aboutOfLessons = [
-  { name: "Ielts-writing", price: 130000 },
-  { name: "Ielts-speaking", price: 150000 },
-  { name: "Ielts-listening", price: 140000 },
+  { name: "Ielts-writing", price: 120000 },
+  { name: "Ielts-speaking", price: 120000 },
+  { name: "Ielts-listening", price: 120000 },
   { name: "Ielts-reading", price: 120000 },
+  { name: "Ielts-writing", price: 120000 },
+  { name: "Ielts-speaking", price: 120000 },
+  { name: "Ielts-listening", price: 120000 },
+  { name: "Ielts-reading", price: 120000 },
+  { name: "Ielts-writing", price: 120000 },
+  { name: "Ielts-speaking", price: 120000 },
+  { name: "Ielts-listening", price: 120000 },
+  { name: "Ielts-reading", price: 120000 },
+  { name: "Ielts-writing", price: 120000 },
+  { name: "Ielts-speaking", price: 120000 },
+  { name: "Ielts-listening", price: 120000 },
 ];
 
 // const courses = [
@@ -122,7 +133,7 @@ export const YourLessonsSection = () => {
                 <Clear />
               </Stack>
             </Stack>
-            <Stack>
+            <Stack overflow={"scroll"} maxHeight={336}>
               {aboutOfLessons.map((item, index) => {
                 return (
                   <CourseChoice
@@ -134,7 +145,7 @@ export const YourLessonsSection = () => {
               })}
             </Stack>
             <Stack
-              height={"80px"}
+              height={80}
               bgcolor={"background.default"}
               direction={"row"}
               justifyContent={"space-between"}
@@ -156,7 +167,6 @@ export const YourLessonsSection = () => {
                 </Typography>
                 {98}₮
               </Stack>
-
               <Button
                 sx={{
                   bgcolor: "primary.dark",

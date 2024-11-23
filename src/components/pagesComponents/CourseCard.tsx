@@ -1,10 +1,15 @@
-import { ArrowForward, Help } from "@mui/icons-material";
+import {
+  ArrowForward,
+  ChatBubbleRounded,
+  CreateRounded,
+  Help,
+} from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
 
 const buttons = [
-  { icon: <Help />, count: 12 },
+  { icon: <CreateRounded />, count: 12 },
   { icon: <Help />, count: 15 },
-  { icon: <Help />, count: 13 },
+  { icon: <ChatBubbleRounded />, count: 13 },
 ];
 
 type CourseCardType = { courseName: string; className: string };
